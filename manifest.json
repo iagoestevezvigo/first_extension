@@ -1,10 +1,21 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
+    "name": "HTML Modifier Extension",
     "version": "1.0",
+    "description": "Modifies HTML of a webpage",
+    "permissions": ["scripting", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
     "action": {
       "default_popup": "hello.html",
       "default_icon": "logo.png"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
   }
