@@ -1,21 +1,15 @@
 {
     "manifest_version": 3,
-    "name": "HTML Modifier Extension",
+    "name": "Change Background Color",
     "version": "1.0",
-    "description": "Modifies HTML of a webpage",
-    "permissions": ["scripting", "activeTab"],
-    "host_permissions": ["<all_urls>"],
-    "background": {
-        "service_worker": "background.js"
-    },
+    "description": "Change the background color of the active tab when button is clicked.",
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
     "action": {
-      "default_popup": "hello.html",
-      "default_icon": "logo.png"
-    },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["content.js"]
-        }
-    ]
+        "default_popup": "hello.html",
+        "default_icon": "logo.png",
+        "default_title": "Change Background Color"
+    }
   }
