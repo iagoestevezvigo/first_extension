@@ -1,7 +1,7 @@
 // Listen for messages from content.js
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "showNotification") {
-    // Create a Chrome notification
+    // Display a Chrome notification
     chrome.notifications.create({
       type: "basic",
       iconUrl: "logo.png",

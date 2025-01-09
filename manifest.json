@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "LinkedIn Reminder Extension",
     "version": "1.0",
-    "description": "Iago.",
+    "description": "Reminds you to open the extension when you visit LinkedIn.",
     "permissions": [
       "scripting",
       "activeTab",
