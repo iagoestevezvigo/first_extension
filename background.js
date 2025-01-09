@@ -1,22 +1,12 @@
-// background.js
-
-// Escucha eventos cuando se hace clic en el icono de la extensión
-chrome.action.onClicked.addListener((tab) => {
-    if (tab.id) {
-      // Inyecta el script en la pestaña actual
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        files: ["content.js"]
-      });
-    }
-  });
-
+// Listen for messages from content.js
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  console.log("alo");
-  if (message.action === "linkedinLoaded") {
-    // Automatically open the extension popup
-    chrome.action.openPopup();
+  if (message.action === "showNotification") {
+    // Create a Chrome notification
+    chrome.notifications.create({
+      type: "basic",
+      iconUrl: "logo.png",
+      title: "LinkedIn Reminder",
+      message: "Don't forget to open the extension for LinkedIn enhancements!"
+    });
   }
 });
-  
-  
