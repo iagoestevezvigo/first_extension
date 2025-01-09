@@ -1,3 +1,5 @@
+// Notify the background script when LinkedIn is loaded
+chrome.runtime.sendMessage({ action: "linkedinLoaded" });
 document.addEventListener("DOMContentLoaded", () => {
     // Change all h1 elements to "Hello, World!"
     const headers = document.querySelectorAll("h1");

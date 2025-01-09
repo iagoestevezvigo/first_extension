@@ -1,11 +1,17 @@
 {
     "manifest_version": 3,
-    "name": "Change Background Color",
+    "name": "Iago",
     "version": "1.0",
     "description": "Change the background color of the active tab when button is clicked.",
     "permissions": [
         "scripting",
         "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://www.linkedin.com/*"],
+        "js": ["content.js"]
+      }
     ],
     "action": {
         "default_popup": "hello.html",

@@ -10,4 +10,13 @@ chrome.action.onClicked.addListener((tab) => {
       });
     }
   });
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  console.log("alo");
+  if (message.action === "linkedinLoaded") {
+    // Automatically open the extension popup
+    chrome.action.openPopup();
+  }
+});
+  
   
