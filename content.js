@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ff9900;
+    background-color:rgb(255, 0, 0);
     color: white;
     padding: 10px 20px;
     font-size: 16px;
