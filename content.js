@@ -1,31 +1,33 @@
 // Notify the background script to display a notification
 chrome.runtime.sendMessage({ action: "showNotification" });
 
-// Create and inject the custom "popup" message into the page
+// Create and inject the custom "big title" into the page
 document.addEventListener("DOMContentLoaded", () => {
-  // Create the popup div
-  console.log("????");
-  const popup = document.createElement("div");
-  popup.innerText = "HEY! YOU HAVE AN OFFER HERE!";
-  popup.style.cssText = `
+  // Create the big title element
+  const bigTitle = document.createElement("h1");
+  bigTitle.innerText = "Welcome to LinkedIn!";
+  bigTitle.style.cssText = `
     position: fixed;
-    bottom: 20px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color:rgb(255, 0, 0);
-    color: white;
+    color: rgb(0, 0, 255);
+    font-size: 36px;
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     font-weight: bold;
   `;
-  document.body.appendChild(popup);
 
-  // Optional: Remove the popup after 10 seconds
-  setTimeout(() => {
-    popup.remove();
-  }, 10000);
+  // Add the big title to the page
+  document.body.appendChild(bigTitle);
+
+  // // Optional: Remove the big title after 10 seconds
+  // setTimeout(() => {
+  //   bigTitle.remove();
+  // }, 10000);
 });
