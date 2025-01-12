@@ -6,7 +6,7 @@ if (document.title.indexOf("LinkedIn") != -1) {
   // Create the big title element
   console.log("Content script loaded and running on LinkedIn.");
   const bigTitle = document.createElement("h1");
-  bigTitle.innerText = "Welcome to LinkedIn!";
+  bigTitle.innerHTML = "Hello.<br>Iago!";
   
   console.log("JAAAAAAAAAAAMON");
   bigTitle.style.cssText = `
