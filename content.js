@@ -1,11 +1,14 @@
 // Notify the background script to display a notification
 chrome.runtime.sendMessage({ action: "showNotification" });
-
+console.log("JAAAAAAAAAAA");
 // Create and inject the custom "big title" into the page
-document.addEventListener("DOMContentLoaded", () => {
+if (document.title.indexOf("LinkedIn") != -1) {
   // Create the big title element
+  console.log("Content script loaded and running on LinkedIn.");
   const bigTitle = document.createElement("h1");
   bigTitle.innerText = "Welcome to LinkedIn!";
+  
+  console.log("JAAAAAAAAAAAMON");
   bigTitle.style.cssText = `
     position: fixed;
     top: 20px;
@@ -30,4 +33,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // setTimeout(() => {
   //   bigTitle.remove();
   // }, 10000);
-});
+}
