@@ -12,8 +12,7 @@ if (document.title.indexOf("LinkedIn") != -1) {
   bigTitle.style.cssText = `
     position: fixed;
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 20px; /* Move to the right side of the page */
     color: rgb(0, 0, 255);
     font-size: 36px;
     font-family: Arial, sans-serif;
