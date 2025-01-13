@@ -9,11 +9,11 @@
       "notifications"
     ],
     "host_permissions": [
-      "https://www.linkedin.com/*"
+      "https://www.amazon.es/cart?ref_=ewc_gtc"
     ],
     "content_scripts": [
       {
-        "matches": ["https://www.linkedin.com/*"],
+        "matches": ["https://www.amazon.es/cart?ref_=ewc_gtc"],
         "js": ["content.js"]
       }
     ],

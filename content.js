@@ -4,7 +4,7 @@
     console.log("Button clicked! Hello from the new function.");
   }
 // Create and inject the custom "big title" into the page
-if (document.title.indexOf("LinkedIn") != -1) {
+if (document.title.startsWith("Amazon") != -1) {
   // Log to the console
   console.log("Content script loaded and running on LinkedIn.");
   
