@@ -1,6 +1,3 @@
-// Notify the background script to display a notification
-chrome.runtime.sendMessage({ action: "showNotification" });
-console.log("JAAAAAAAAAAA");
 // Create and inject the custom "big title" into the page
 if (document.title.indexOf("LinkedIn") != -1) {
   // Create the big title element
@@ -28,8 +25,8 @@ if (document.title.indexOf("LinkedIn") != -1) {
   // Add the big title to the page
   document.body.appendChild(bigTitle);
 
-  // // Optional: Remove the big title after 10 seconds
-  // setTimeout(() => {
-  //   bigTitle.remove();
-  // }, 10000);
+  // Remove the big title after 15 seconds
+  setTimeout(() => {
+    bigTitle.remove();
+  }, 15000);
 }
