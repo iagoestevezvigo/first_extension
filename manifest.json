@@ -9,11 +9,11 @@
       "notifications"
     ],
     "host_permissions": [
-      "https://www.amazon.es/cart?ref_=ewc_gtc"
+      "https://www.amazon.es/gp/cart/*"
     ],
     "content_scripts": [
       {
-        "matches": ["https://www.amazon.es/cart?ref_=ewc_gtc"],
+        "matches": ["https://www.amazon.es/gp/cart/*"],
         "js": ["content.js"]
       }
     ],
