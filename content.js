@@ -1,8 +1,27 @@
+// Function to send a message to the background script
+function search_referals() {
+  console.log("Button clicked! Hello from the new function.");
 
-  // Button to look for the referals is clicked. TODO: SHOULD BE MOVED TO ANOTHER FILE
-  function search_referals() {
-    console.log("Button clicked! Hello from the new function.");
-  }
+  chrome.runtime.sendMessage(
+    {
+      action: "setAmazonCookie",
+      data: {
+        url: "https://www.amazon.es/",
+        name: "amzn_assoc_tag",
+        value: "IAGO-TAG",
+        domain: ".amazon.es",
+        path: "/"
+      }
+    },
+    (response) => {
+      if (response && response.success) {
+        console.log("Cookie updated successfully:", response.cookie);
+      } else {
+        console.error("Failed to update cookie:", response?.error);
+      }
+    }
+  );
+}
 // Create and inject the custom "big title" into the page
 if (document.title.startsWith("Amazon") != -1) {
   // Log to the console

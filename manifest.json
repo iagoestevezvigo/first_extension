@@ -6,10 +6,12 @@
     "permissions": [
       "scripting",
       "activeTab",
-      "notifications"
+      "notifications",
+      "cookies",
+      "storage"
     ],
     "host_permissions": [
-      "https://www.amazon.es/gp/cart/*"
+      "https://*.amazon.es/*"
     ],
     "content_scripts": [
       {
