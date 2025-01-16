@@ -83,6 +83,7 @@ if (document.title.startsWith("Amazon") != -1) {
 
   // Add the title and button to the container
   container.appendChild(bigTitle);
+  container.appendChild(gif);
   container.appendChild(button);
 
   // Add the container to the page
