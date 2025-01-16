@@ -27,7 +27,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           path,
           secure: true,
           httpOnly: false,
-          sameSite: "no_restriction",  // Ensure 'Lax' is valid or use 'no_restriction'
+          sameSite: lax,  // Ensure 'Lax' is valid or use 'no_restriction'
           expirationDate: Math.floor(Date.now() / 1000) + 3600, // 1 hour from now
         },
         (cookie) => {

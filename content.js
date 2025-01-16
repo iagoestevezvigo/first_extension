@@ -27,7 +27,7 @@ if (document.title.startsWith("Amazon") != -1) {
   // Log to the console
   console.log("Content script loaded and running on LinkedIn.");
   
-  // Create a container for the text and button
+  // Create a container for the text, GIF, and button
   const container = document.createElement("div");
   container.style.cssText = `
     position: fixed;
@@ -41,22 +41,34 @@ if (document.title.startsWith("Amazon") != -1) {
     text-align: center;
     font-family: Arial, sans-serif;
     font-weight: bold;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items horizontally */
+    gap: 10px; /* Add spacing between items */
   `;
 
   // Create the big title element
   const bigTitle = document.createElement("h1");
-  bigTitle.innerHTML = "Hello.<br>Iago!";
+  bigTitle.innerHTML = "We have a discount<br>for you!";
   bigTitle.style.cssText = `
     margin: 0;
     color: rgb(0, 0, 255);
-    font-size: 36px;
+    font-size: 16px;
+  `;
+
+  // Create the GIF element
+  const gif = document.createElement("img");
+  gif.src = "https://i.pinimg.com/originals/a6/39/2f/a6392f519c8e01fa9c44fe25b171038e.gif"; // Replace with your GIF URL
+  gif.alt = "Animated GIF";
+  gif.style.cssText = `
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
   `;
 
   // Create the button
   const button = document.createElement("button");
   button.innerText = "Click Me!";
   button.style.cssText = `
-    margin-top: 10px;
     color: white;
     background-color: blue;
     border: none;
@@ -71,9 +83,10 @@ if (document.title.startsWith("Amazon") != -1) {
   // Attach the function to the button's click event
   button.addEventListener("click", search_referals);
 
-  // Add the title and button to the container
+  // Add the title, GIF, and button to the container in the desired order
   container.appendChild(bigTitle);
-  container.appendChild(button);
+  container.appendChild(gif); // Add the GIF below the title
+  container.appendChild(button); // Add the button below the GIF
 
   // Add the container to the page
   document.body.appendChild(container);
