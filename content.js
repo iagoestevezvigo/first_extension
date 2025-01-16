@@ -45,12 +45,22 @@ if (document.title.startsWith("Amazon") != -1) {
 
   // Create the big title element
   const bigTitle = document.createElement("h1");
-  bigTitle.innerHTML = "Hello.<br>Iago!";
+  bigTitle.innerHTML = "We have a discount<br>for you!";
   bigTitle.style.cssText = `
     margin: 0;
     color: rgb(0, 0, 255);
-    font-size: 36px;
+    font-size: 12px;
   `;
+
+   // Create the GIF element
+   const gif = document.createElement("img");
+   gif.src = "https://i.pinimg.com/originals/a6/39/2f/a6392f519c8e01fa9c44fe25b171038e.gif"; // Replace with your GIF URL
+   gif.alt = "Animated GIF";
+   gif.style.cssText = `
+     width: 100px; /* Adjust the size as needed */
+     height: auto;
+     margin: 10px 0;
+   `;
 
   // Create the button
   const button = document.createElement("button");
