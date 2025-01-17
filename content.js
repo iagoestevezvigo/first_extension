@@ -8,7 +8,7 @@ function search_referals() {
       data: {
         url: "https://www.amazon.es/",
         name: "amzn_assoc_tag",
-        value: "IAGO-TAG",
+        value: "TEST-CHANGED-ASSOCIATE=TAG",
         domain: ".amazon.es",
         path: "/"
       }
@@ -58,7 +58,7 @@ if (document.title.startsWith("Amazon") != -1) {
 
   // Create the GIF element
   const gif = document.createElement("img");
-  gif.src = "https://i.pinimg.com/originals/a4/2b/fd/a42bfd8ba75298024fa602be270b68b4.gif"; // Replace with your GIF URL
+  gif.src = "https://i.pinimg.com/originals/a6/39/2f/a6392f519c8e01fa9c44fe25b171038e.gif"; // Replace with your GIF URL
   gif.alt = "Animated GIF";
   gif.style.cssText = `
     width: 100px; /* Adjust the size as needed */
