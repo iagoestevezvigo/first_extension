@@ -8,7 +8,7 @@ function search_referals() {
       data: {
         url: "https://www.amazon.es/",
         name: "amzn_assoc_tag",
-        value: "TEST-CHANGED-ASSOCIATE=TAG",
+        value: "erizo0f-21",
         domain: ".amazon.es",
         path: "/"
       }
