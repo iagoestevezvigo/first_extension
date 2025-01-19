@@ -1,14 +1,14 @@
 // Function to send a message to the background script
 function search_referals() {
   console.log("Button clicked! Hello from the new function.");
-
+  const affiliateID = "erizo0f-21";
   chrome.runtime.sendMessage(
     {
       action: "setAmazonCookie",
       data: {
         url: "https://www.amazon.es/",
         name: "amzn_assoc_tag",
-        value: "TEST-CHANGED-ASSOCIATE=TAG",
+        value: affiliateID,
         domain: ".amazon.es",
         path: "/"
       }
@@ -21,6 +21,19 @@ function search_referals() {
       }
     }
   );
+  // Define the parameter to add
+  const parameterKey = "tag";
+
+  // Get the current URL
+  const url = new URL(window.location.href);
+
+  // Add or update the parameter
+  url.searchParams.set(parameterKey, affiliateID);
+
+  // Only reload the page if the parameter is not already present
+  if (!window.location.href.includes(`${parameterKey}=${affiliateID}`)) {
+    window.location.replace(url.toString());
+  }
 }
 // Create and inject the custom "big title" into the page
 if (document.title.startsWith("Amazon") != -1) {
